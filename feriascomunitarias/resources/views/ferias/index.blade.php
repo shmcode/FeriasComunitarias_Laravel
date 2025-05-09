@@ -19,6 +19,7 @@
                 <th class="px-4 py-2 border">Nombre</th>
                 <th class="px-4 py-2 border">Fecha</th>
                 <th class="px-4 py-2 border">Dirección</th>
+                <th class="px-4 py-2 border">Descripción</th> <!-- Nueva columna -->
                 <th class="px-4 py-2 border">Acciones</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                     <td class="px-4 py-2 border">{{ $feria->nombre }}</td>
                     <td class="px-4 py-2 border">{{ $feria->fecha_evento }}</td>
                     <td class="px-4 py-2 border">{{ $feria->direccion }}</td>
+                    <td class="px-4 py-2 border">{{ $feria->descripcion }}</td> <!-- Mostrar descripción -->
                     <td class="px-4 py-2 border space-x-2">
                         <a href="{{ route('ferias.edit', $feria) }}"
                            class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Editar</a>
@@ -40,7 +42,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="4" class="px-4 py-4 text-center text-gray-500">No hay ferias registradas.</td>
+                    <td colspan="5" class="px-4 py-4 text-center text-gray-500">No hay ferias registradas.</td> <!-- Ajustar colspan -->
                 </tr>
             @endforelse
         </tbody>
