@@ -10,4 +10,5 @@ Route::get('/', function () {
 });
 
 Route::resource('ferias', FeriaController::class);
-Route::resource('emprendedores', EmprendedorController::class);
+Route::resource('emprendedores', EmprendedorController::class)
+    ->parameters(['emprendedores' => 'emprendedor']);
