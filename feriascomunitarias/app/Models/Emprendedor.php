@@ -16,4 +16,9 @@ class Emprendedor extends Model
         'telefono',
         'rubro',
     ];
+
+    public function ferias()
+    {
+        return $this->belongsToMany(Feria::class, 'feria_emprendedor');
+    }
 }

@@ -15,4 +15,15 @@ class Feria extends Model
         'direccion',
         'descripcion',
     ];
+
+    public function edit(Feria $feria)
+{
+    $emprendedores = Emprendedor::all();
+    return view('ferias.edit', compact('feria', 'emprendedores'));
+}
+
+    public function emprendedores()
+    {
+        return $this->belongsToMany(Emprendedor::class, 'feria_emprendedor');
+    }
 }
