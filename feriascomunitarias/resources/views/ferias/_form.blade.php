@@ -25,14 +25,18 @@
 
 <div class="mb-4">
   <label class="block font-semibold mb-1">Emprendedores:</label>
-  <select name="emprendedores[]" multiple class="w-full border px-4 py-2 rounded">
+  <div class="grid grid-cols-2 gap-2">
     @foreach ($emprendedores as $emprendedor)
-    <option value="{{ $emprendedor->id }}"
-      {{ isset($feria) && $feria->emprendedores->contains($emprendedor->id) ? 'selected' : '' }}>
-      {{ $emprendedor->nombre }}
-    </option>
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" name="emprendedores[]" value="{{ $emprendedor->id }}"
+          {{ isset($feria) && $feria->emprendedores->contains($emprendedor->id) ? 'checked' : '' }}
+          class="form-checkbox">
+        <span class="ml-2">{{ $emprendedor->nombre }}</span>
+      </label>
+    </div>
     @endforeach
-  </select>
+  </div>
 </div>
 
 
